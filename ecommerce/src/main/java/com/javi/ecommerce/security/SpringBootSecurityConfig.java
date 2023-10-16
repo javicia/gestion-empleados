@@ -1,4 +1,4 @@
-package com.javi.ecommerce.service;
+package com.javi.ecommerce.security;
 
 import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.context.annotation.Bean; 

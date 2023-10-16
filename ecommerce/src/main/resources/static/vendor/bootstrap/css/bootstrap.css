@@ -5268,17 +5268,19 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .jumbotron {
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
-  background-color: #e9ecef;
-  border-radius: 0.3rem;
+    padding: 0; /* Elimina el relleno para ajustar la imagen al tamaño completo del jumbotron */
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: 0.3rem;
+    position: relative;
 }
-
 @media (min-width: 576px) {
   .jumbotron {
     padding: 4rem 2rem;
   }
 }
+
+
 
 .jumbotron-fluid {
   padding-right: 0;
@@ -10274,5 +10276,12 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+  
+  .image-overlay {
+    position: relative;
+    display: inline-block;
+}
+
+
 }
 /*# sourceMappingURL=bootstrap.css.map */

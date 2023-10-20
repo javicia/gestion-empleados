@@ -1,4 +1,4 @@
-<p>lista-empleados works!</p>
+
 <h2>Lista empleados</h2>
 <table class="table table-striped">
     <thead class="table-dark">
@@ -9,10 +9,10 @@
     </tr>
 </thead>
 <tbody>
-    <tr>
-        <th>Nombre</th>
-        <th>Apellidos</th>
-        <th>Email</th>
+    <tr *ngFor="let empleado of empleados">
+        <td>{{empleado.nombre}}</td>
+        <td>{{empleado.apellidos}}</td>
+        <td>{{empleado.email}}</td>
     </tr>
 </tbody>
 </table>

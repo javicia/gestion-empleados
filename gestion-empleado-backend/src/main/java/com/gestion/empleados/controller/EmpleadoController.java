@@ -1,12 +1,15 @@
 package com.gestion.empleados.controller;
 
 import java.security.PublicKey;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -48,7 +51,7 @@ public class EmpleadoController {
 		return ResponseEntity.ok(empleado);
 	}
 	
-	
+	//Método para actualizar empleados
 	@PutMapping("/empleados/{id}")
 	public ResponseEntity<Empleado> actualizarEmpleado(@PathVariable Long id, @RequestBody Empleado detallesEmpleado){
 		Empleado empleado = empleadoRepository
@@ -59,7 +62,23 @@ public class EmpleadoController {
 		empleado.setEmail(detallesEmpleado.getEmail());
 		
 		Empleado empleadoActualizado = empleadoRepository.save(empleado);
-		return ResponseEntity.ok(empleado);
+		return ResponseEntity.ok(empleadoActualizado);
 	}
+	
+	
+	//Método para eliminar empleados
+	@DeleteMapping("/empleados/{id}")
+	public ResponseEntity<Map<String,Boolean>> eliminarEmplado(@PathVariable Long id){
+		Empleado empleado = empleadoRepository
+				.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("No existe el empleado con el ID : " + id));
+		empleadoRepository.delete(empleado);
+		Map<String, Boolean> respuesta = new HashMap<>();
+		respuesta.put("eliminar", Boolean.TRUE);
+		return ResponseEntity.ok(respuesta);
+	}
+	
 }
+
+
 

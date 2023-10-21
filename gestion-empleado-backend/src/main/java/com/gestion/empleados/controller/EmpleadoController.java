@@ -55,7 +55,10 @@ public class EmpleadoController {
 				.findById(id)
 				.orElseThrow(()-> new ResourceNotFoundException("No existe el empleado con el ID: " + id));
 		empleado.setNombre(detallesEmpleado.getNombre());
+		empleado.setApellidos(detallesEmpleado.getApellidos());
+		empleado.setEmail(detallesEmpleado.getEmail());
 		
+		Empleado empleadoActualizado = empleadoRepository.save(empleado);
 		return ResponseEntity.ok(empleado);
 	}
 }

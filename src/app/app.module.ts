@@ -11,13 +11,15 @@ import { ActualizarEmpleadoComponent } from './actualizar-empleado/actualizar-em
 import { EmpleadoDetallesComponent } from './empleado-detalles/empleado-detalles.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ListaEmpleadosComponent,
     RegistrarEmpleadoComponent,
     ActualizarEmpleadoComponent,
-    EmpleadoDetallesComponent
+    EmpleadoDetallesComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Empleado } from '../empleado';
 import { EmpleadoService } from '../empleado.service';
-import { Route, Router } from '@angular/router';
+import {Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registrar-empleado',
@@ -29,9 +30,11 @@ export class RegistrarEmpleadoComponent implements OnInit{
 
   irListaEmpleados(){
     this.router.navigate(['/empleados'])
+    swal('Empleado registrado',`El empleado ${this.empleado.nombre} ha sido registrado con exito`,`success`);
   }
   onSubmit(){
    this.guardarEmpleado();
   }
 
 }
+

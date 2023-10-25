@@ -172,13 +172,13 @@
             <select class="form-control" 
             id="departamento" 
             name="departamento" 
-            [(ngModel)] = "empleado.id_departamento" 
+            [(ngModel)] = "empleado.departamento" 
             required
             >
               <option value="" disabled selected>Seleccione el departamento</option>
-              <option value="${gerencia}">Gerencia</option>
-              <option value="${directivos}">Directivos</option>
-              <option value="${rrhh}">Recursos Humanos</option>
+              <option value="Gerencia">Gerencia</option>
+              <option value="Directivos">Directivos</option>
+              <option value="RRhh">Recursos Humanos</option>
               <option value="Ventas">Ventas</option>
               <option value="Jefes de Proyecto">Jefes de Proyecto</option>
               <option value="Analistas">Analistas</option>

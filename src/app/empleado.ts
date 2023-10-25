@@ -5,10 +5,9 @@ export class Empleado {
     email: string;
     telefono: string;
     dni: string;
-    fechaNacimiento: Date;
+    fechaNacimiento: string;
     sueldo: string;
     direccion: string;
-    id_departamento: number;
-    ;
+    departamento: string;
 }
 

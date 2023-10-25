@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Sistema gestión de empleados';
+seleccionarDepartamento($event: Event) {
+throw new Error('Method not implemented.');
 }
+  title = 'Sistema gestión de empleados';
+departamentos: any;
+}
+

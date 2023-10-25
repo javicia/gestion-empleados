@@ -6,6 +6,8 @@
         <th>Nombre</th>
         <th>Apellidos</th>
         <th>Email</th>
+        <th>Teléfono</th>
+        <th>Departamento</th>
         <th>Acciones</th>
     </tr>
 </thead>
@@ -14,6 +16,8 @@
         <td>{{empleado.nombre}}</td>
         <td>{{empleado.apellidos}}</td>
         <td>{{empleado.email}}</td>
+        <td>{{empleado.telefono}}</td>
+        <!--<td>{{departamento.id}}</td>-->
         <td>
             <button (click)="actualizarEmpleado(empleado.id)" class="btn btn-info">Editar</button>
             <button (click)="eliminarEmpleado(empleado.id)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>

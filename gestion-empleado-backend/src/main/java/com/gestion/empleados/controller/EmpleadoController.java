@@ -1,13 +1,11 @@
 package com.gestion.empleados.controller;
 
-import java.security.PublicKey;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,6 +58,12 @@ public class EmpleadoController {
 		empleado.setNombre(detallesEmpleado.getNombre());
 		empleado.setApellidos(detallesEmpleado.getApellidos());
 		empleado.setEmail(detallesEmpleado.getEmail());
+		empleado.setTelefono(detallesEmpleado.getTelefono());
+		empleado.setDni(detallesEmpleado.getDni());
+		empleado.setFechaNacimiento(detallesEmpleado.getFechaNacimiento());
+		empleado.setSueldo(detallesEmpleado.getSueldo());
+		empleado.setDireccion(detallesEmpleado.getDireccion());
+		empleado.setDepartamento(detallesEmpleado.getDepartamento());
 		
 		Empleado empleadoActualizado = empleadoRepository.save(empleado);
 		return ResponseEntity.ok(empleadoActualizado);

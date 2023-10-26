@@ -37,4 +37,9 @@ obtenerEmpleadoPorId(id:number): Observable<Empleado>{
 eliminarEmpleado(id:number):Observable<Object>{
 return this.httpClient.delete(`${this.baseURL}/${id}`);
 }
+
+//Método para buscar empleado en el buscador
+buscarEmpleado(nombre:string):Observable<Empleado[]>{
+  return this.httpClient.get<Empleado[]>(`${this.baseURL}/seach`);
+}
 }

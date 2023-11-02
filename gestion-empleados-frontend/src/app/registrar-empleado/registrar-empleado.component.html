@@ -1,0 +1,193 @@
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center">Registro de empleado</h3>
+  <form (ngSubmit)= "onSubmit()" #empleadoForm = "ngForm">
+    <div class="form-group">
+      <label>Nombre : </label>
+      <input type = "text"
+      class="form-control"
+      id = "nombre"
+      [(ngModel)] = "empleado.nombre"
+      name = "nombre"
+      required
+      minlength="4"
+      maxlength="10"
+      placeholder="Introduzca su nombre "
+      #nombre = "ngModel"
+      >
+      <div class="alert alert-danger" *ngIf= "nombre.invalid && (nombre.dirty || nombre.touched)">
+        <div *ngIf = "nombre.errors.required">
+          Introduzca el nombre, por favor
+        </div>
+        <div *ngIf = "nombre.errors.minlength">
+          El nombre tiene que contener como minimo 4 caractéres.
+        </div>
+        <div *ngIf = "nombre.errors.maxlength">
+          El nombre tiene que tener como maximo 10 caractéres.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Apellido : </label>
+      <input type = "text"
+      class="form-control"
+      id = "apellido"
+      [(ngModel)] = "empleado.apellidos"
+      name = "apellidos"
+      required
+      minlength="4"
+      maxlength="20"
+      placeholder="Introduzca su apellido "
+      #apellidos = "ngModel"
+      >
+      <div class="alert alert-danger" *ngIf= "apellidos.invalid && (apellidos.dirty || apellidos.touched)">
+        <div *ngIf = "apellidos.errors.required">
+          Introduzca el apellido, por favor.
+        </div>
+        <div *ngIf = "apellidos.errors.minlength">
+          El apellido tiene que contener como minimo 4 caracteres.
+        </div>
+        <div *ngIf = "apellidos.errors.maxlength">
+          El apellido tiene que tener como maximo 20 caractéres.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Email : </label>
+      <input type = "email"
+      class="form-control"
+      id = "email"
+      [(ngModel)] = "empleado.email"
+      name = "email"
+      pattern ="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
+      required
+      placeholder="Introduzca su email "
+      #email = "ngModel"
+      >
+      <div class="alert alert-danger" *ngIf= "email.invalid && (email.dirty || email.touched)">
+        <div *ngIf = "email.errors.required">
+          Introduzca el email por favor
+        </div>
+        <div *ngIf = "email.errors.pattern">
+          Por favor, introduzca el email con el siguiente formato : user100@gmail.com
+        </div>
+      </div>
+      </div>
+      <div class="form-group">
+        <label>Teléfono : </label>
+        <input type = "telefono"
+        class="form-control"
+        id = "telefono"
+        [(ngModel)] = "empleado.telefono"
+        name = "telefono"
+        pattern="[0-9]{9}"
+        required
+        placeholder="Introduzca su telefono "
+        #telefono = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "telefono.invalid && 
+        (telefono.dirty || telefono.touched)">
+          <div *ngIf = "telefono.errors.required">
+            Introduzca el telefono, por favor.
+          </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>DNI o NIE : </label>
+          <input type = "dni"
+          class="form-control"
+          id = "dni"
+          [(ngModel)] = "empleado.dni"
+          name = "dni"
+          pattern="^([0-9]{8}[A-Z])|([XYZ][0-9]{7}[A-Z])$"
+          required
+          placeholder="Introduzca su DNI o NIF "
+          #dni = "ngModel"
+          >
+          <div class="alert alert-danger" *ngIf= "dni.invalid && (dni.dirty || dni.touched)">
+            <div *ngIf = "dni.errors.required">
+              Introduzca el DNI, por favor.
+            </div>
+          </div>
+    </div>
+    <div class="form-group">
+      <label>Fecha de nacimiento : </label>
+      <input type = "fechaNacimiento"
+      class="form-control"
+      id = "fechaNacimiento"
+      [(ngModel)] = "empleado.fechaNacimiento"
+      name = "fechaNacimiento"
+      pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}$"
+      required
+      placeholder="00/00/0000 "
+      #fechaNacimiento = "ngModel"
+      >
+          <div class="alert alert-danger" *ngIf= "fechaNacimiento.invalid && 
+          (fechaNacimiento.dirty || fechaNacimiento.touched)">
+            <div *ngIf = "fechaNacimiento.errors.required">
+              Introduzca la fecha de nacimiento, por favor.
+            </div>
+            <div *ngIf = "fechaNacimiento.errors.pattern">
+              Por favor, introduzca la fecha de nacimiento con el siguiente formato : dd/mm/aaaa
+            </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Sueldo anual: </label>
+        <input type = "sueldo"
+        class="form-control"
+        id = "sueldo"
+        [(ngModel)] = "empleado.sueldo"
+        name = "sueldo"
+        pattern="\d+(\.\d{1,2})?|(\d{1,3}(,\d{3})*(\.\d{1,2})?)?"
+        placeholder="€"
+        #sueldo = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "sueldo.invalid && (sueldo.dirty || sueldo.touched)">
+          <div *ngIf = "sueldo.errors.required">
+            Introduzca el salario anual, por favor
+          </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Dirección : </label>
+          <input type = "direccion"
+          class="form-control"
+          id = "direccion"
+          [(ngModel)] = "empleado.direccion"
+          name = "direccion"
+          pattern="^[\w\s\dáéíóúüÁÉÍÓÚÜ.,-]+ [\d]+[A-Za-z]?[,.\s\w\dáéíóúüÁÉÍÓÚÜ-]*$"
+          required
+          placeholder="Introduzca una dirección "
+          #direccion = "ngModel"
+          >
+          <div class="alert alert-danger" *ngIf= "direccion.invalid && (direccion.dirty || direccion.touched)">
+            <div *ngIf = "direccion.errors.required">
+              Introduzca una dirección válida en España, por favor.
+            </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Departamento : </label>
+            <select class="form-control" 
+            id="departamento" 
+            name="departamento" 
+            [(ngModel)] = "empleado.departamento" 
+            required
+            >
+              <option value="" disabled selected>Seleccione el departamento</option>
+              <option value="Gerencia">Gerencia</option>
+              <option value="Directivos">Directivos</option>
+              <option value="RRhh">Recursos Humanos</option>
+              <option value="Ventas">Ventas</option>
+              <option value="Jefes de Proyecto">Jefes de Proyecto</option>
+              <option value="Analistas">Analistas</option>
+              <option value="Programadores Senior">Programadores Senior</option>
+              <option value="Programadores Junior">Programadores Junior</option>
+              <option value="Diseñadores">Diseñadores</option>
+          </select>
+            </div>
+    <button class="btn btn-success" [disabled]= "!empleadoForm.form.valid">Guardar</button>
+  </form>
+</div>
+

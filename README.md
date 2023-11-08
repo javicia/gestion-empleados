@@ -1,4 +1,3 @@
-# GestionEmpleados
 # Gestión de Empleados - Aplicación Full Stack
 
 Sistema de gestión de empleados de una empresa, Realizando CRUD de empleados y Búsqueda de empleados.

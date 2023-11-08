@@ -41,14 +41,6 @@ La aplicación ofrece una serie de características y funcionalidades clave, inc
    ```bash
    git clone https://github.com/javicia/gestion-empleados.git
 
--Desarrollo de servicios REST.
--Manejo de Spring Security para asegurar estos servicios.
--Protección mediante JWT.
--Manejo de anotaciones con Spring Data JPA.
--Integración entre Frontend y Backend.
--Uso de Angular Material.
--Creación y manejo de componentes Angular.
--Generar y utilizar los tokens de acceso.
--Uso de herramientas como Postman y Swagger.
+
 
 
